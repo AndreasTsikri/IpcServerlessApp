@@ -1,0 +1,19 @@
+	//Main Thread : 
+	//      - check if Shared Memory Segment (SMS) and creates it 
+	//	- if exist spawn A , B Threads
+	//	- if not creates the memory then spawn thread A , B;
+	//
+	//Thread A : -> wait for user input and writing to the SMS
+	//Thread B : -> reading from SMS and waits if there is a new message	
+	
+	//If it exist read all messages to the console and then prompt user for the input
+	// when user inserts the input --> 
+	// 	-- lock the Shared Memory Segment
+	// 	-- write to shared memory segment
+	// 	-- print to the console
+	// 	-- notifyAll other processes that there is a new message
+	// 	-- wait - so to give access to other threads
+	
+	// keep track of the current line and the process line:
+	// 	- process_line != segment_line -> new message -> print it to console!
+	// when the thread is resuming from the wait - it will check is_message_in ? if yes it will print 
