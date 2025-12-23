@@ -15,8 +15,9 @@ A high-performance C++ console application utilizing **Boost.Interprocess** for 
 ### Thread Logic:
 | Thread | Responsibility | Exit Strategy |
 | :--- | :--- | :--- |
-| **Main/Producer** | Reads `stdin` and writes to SHM | 
-| **Consumer** | Reads from SHM | Uses `wait_for()` to periodically check the `g_terminate` flag. |
+| **Main** | Reads `stdin`, initialize the name of user and spawns the 2 other threads | 
+| **Producer** | Reads `stdin` and writes to SHM | 
+| **Consumer** | Reads from SHM | Uses `wait()` and waits for condition to wake up|
 
 ---
 
