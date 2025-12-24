@@ -5,7 +5,7 @@ A high-performance C++ console application utilizing **Boost.Interprocess** for 
 
 ## 🛠 Features
 * **Boost.Interprocess:** Uses `managed_shared_memory` for fast data exchange.
-* **Dual-Thread Architecture:** * **Producer:** Manages user input via non-blocking polling.
+* **Dual-Thread Architecture:** * **Producer:** Manages user input via condition variable.
     * **Consumer:** Processes memory updates via Condition Variables.
 * **Resource Management:** Automated cleanup of shared memory segments on exit.
 **WARNING: Currently the Control-C interrupt causing the program to crush! Only by typing "exit" or "quit" is working as expected
